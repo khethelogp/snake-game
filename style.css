@@ -1,0 +1,41 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.snake-game {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.snake-game h3 {
+  font-size: 1.6rem;
+}
+
+.canvas {
+  height: 100vh;
+  width: 100vw;
+}
+
+#snakeboard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#score {
+  text-align: center;
+  font-size: 120px;
+  position: relative;
+  margin-bottom: 2rem;
+}
