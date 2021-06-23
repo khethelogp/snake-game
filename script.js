@@ -40,7 +40,7 @@ document.addEventListener('keydown', change_direction);
 function main(){
     
     if (has_game_ended()){
-        alert('Game over ! 😥, \n Refresh to play again 😁');
+        alert('Game over ! 😥, \nRefresh to play again 😁');
         return;
     }
 
