@@ -28,19 +28,38 @@ let food_y;
 // game speed 
 let speed = 100;
 
+
+/* //move directions
+const goingUp = dy === -10;
+const goingDown = dy === 10;
+const goingRight = dx === 10;
+const goingLeft = dx === -10;
+ */
+
 const snakeboard = document.getElementById('snakeboard');
 const snakeboard_ctx= snakeboard.getContext('2d');
+const playBtn = document.getElementById('playBtn');
+const restartBtn = document.getElementById('restartBtn');
+const gameOver = document.getElementById('game-over');
+const canvas = document.querySelector('.canvas');
 
-main();
+playBtn.addEventListener('click',playGame);
 
-gen_food();
-
-document.addEventListener('keydown', change_direction);
+function playGame(){
+    main();
+    gen_food();
+    document.addEventListener('keydown', change_direction);    
+}
 
 function main(){
     
     if (has_game_ended()){
-        alert('Game over ! 😥, \nRefresh to play again 😁');
+        /* alert('Game over ! 😥, \nRefresh to play again 😁'); */
+
+        gameOver.classList.add('show')
+        restartBtn.addEventListener('click', () =>{
+            window.location.reload();
+        })
         return;
     }
 
@@ -69,7 +88,7 @@ function clearCanvas() {
         // Draw a "border" around the entire canvas
         snakeboard_ctx.strokeRect(0, 0, snakeboard.width, snakeboard.height);
 }
-     
+
 function drawSnake(){
     snake.forEach(drawSnakePart);
 }
@@ -118,11 +137,50 @@ function gen_food(){
     );
 }
 
+/* var startingX, startingY, movingX, movingY; 
+function touchStart(e) {
+    // e.preventDefault();
+    startingX = e.touches[0].clientX;
+    startingY = e.touches[0].clientY;
+}
+function touchMove(e) {
+    // e.preventDefault();
+    movingX = e.touches[0].clientX;
+    movingY = e.touches[0].clientY;
+}
+
+function touchEnd() {
+    if ((startingX + 100 < movingX) && !goingLeft) {
+        dx = 10;
+        dy = 0;
+        console.log("right");
+    } 
+    if ((startingX - 100 > movingX) && !goingRight) {
+        dx = -10;
+        dy = 0;
+        console.log("left");
+    }
+    
+    if((startingY + 100 < movingY) && !goingUp){
+        dx = 0;
+        dy = 10;
+        console.log("down");
+    } 
+    if ((startingY - 100 > movingY) && !goingDown) {
+        dx = 0;
+        dy = -10;
+        console.log("up");
+    }
+    return "no touch direction";
+} */
+
+    
+// Change Snake direction
 function change_direction(e){
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const DOWN_KEY = 40; 
 
     // Prevent the snake from reversing
     if(changing_direction) return;
@@ -132,7 +190,7 @@ function change_direction(e){
     const goingUp = dy === -10;
     const goingDown = dy === 10;
     const goingRight = dx === 10;
-    const goingLeft = dx === -10;
+    const goingLeft = dx === -10; 
 
     if(keyPressed === LEFT_KEY && !goingRight){
         dx = -10;

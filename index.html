@@ -16,11 +16,21 @@
     <div class="snake-game">
         <h3 class="play">Reload page and Play now</h3>
         <p>use arrow keys to play the game</p>
+        <button id="playBtn" class=" btn ">Play </button>
         <div id="score">0</div>
         <div class="canvas">
-            <canvas id="snakeboard" width="400" height="400"></canvas>
+            <canvas id="snakeboard" width="400" height="400"
+            ontouchstart = "touchStart(event)"
+        ontouchmove = "touchMove(event)"
+        ontouchend = "touchEnd()"></canvas>
         </div>
     </div>
+
+    <div id="game-over" class="game-over">
+        <div class="game-over-text">Game Over</div>
+        <button id="restartBtn" class="btn">Restart</button>
+    </div>
+
     <script src="./script.js"></script>
 </body>
 </html>
