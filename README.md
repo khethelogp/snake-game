@@ -1,10 +1,9 @@
-# snake-game
-a simple snake game 
+# java-snake-game
 
-created using Vanilla Javascript, CSS and HTML
+simple snake game 🐍
 
-[Demo :eyes:](https://khethelogp.github.io/snake-game/)
+created using Java
 
-![](https://i.ibb.co/k6xZDkh/snake-game.png)
+![](https://i.ibb.co/d7bYvSB/java-snake.png)
 
-made with :heart: by KhetheloGP
+made with :heart: by [KhetheloGP](https://github.com/khethelogp)
