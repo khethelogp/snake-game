@@ -88,6 +88,13 @@ body {
   display: flex;
 }
 
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @media (max-width: 760px) {
   .snake-game h3 {
     font-size: 1.2rem;
